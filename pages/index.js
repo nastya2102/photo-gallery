@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Router from 'next/router';
-import {getData} from "../store/data/action";
+import {deleteImage, getData} from "../store/data/action";
 import styles from "../styles/home.module.scss";
 import Input from "../components/Input";
 import DragAndDrop from "../components/DragAndDrop";
@@ -9,17 +9,20 @@ import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
 
 const MainPage = () => {
-  const state = useSelector(state => state)
+  const state = useSelector(state => state.data)
+  console.log(state)
   const {title, description, images} = useSelector(state => state.data)
+  console.log(title)
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
+    title: state.title || '',
+    description: state.description || '',
     images: [],
   })
 
   useEffect(() => {
     const curFormData = {}
+    console.log("use efect",title)
     if (title) curFormData.title = title;
     if (description) curFormData.description = description;
     if (images) curFormData.images = images;
@@ -36,17 +39,17 @@ const MainPage = () => {
   };
 
   const deleteAllImage = () => {
-    // setFormData((images) => ({...preValue, images: []}));
+    dispatch(deleteImage(formData))
   };
 
   return (
     <div className={styles.container}>
       <Input
-        value={formData.title}
+        value={title}
         handleChangeInput={(e) => handleChangeForm(e, 'title')}
       />
       <Input
-        value={formData.description}
+        value={description}
         handleChangeInput={(e) => handleChangeForm(e, 'description')}
       />
       <DragAndDrop onLoadImage={(e) => handleChangeForm(e, 'images')}/>

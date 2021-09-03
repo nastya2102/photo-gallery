@@ -1,10 +1,10 @@
 import styles from './Input.module.scss';
 
-const Input = ({formData, handleChangeInput}) => (
+const Input = ({value, handleChangeInput}) => (
     <input
         type={'text'}
         className={styles.input}
-        value={formData}
+        value={value}
         onChange={(e) => handleChangeInput(e.target.value)}
     />
 )
