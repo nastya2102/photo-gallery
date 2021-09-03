@@ -1,0 +1,38 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.image {
+  height: 300px;
+  width: 300px;
+  border-radius: 7px;
+}
+
+.eyes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  position: relative;
+  top: -303px;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: rgba(37, 37, 37, 0.25);
+  opacity: 0;
+  path {
+    fill: gray;
+  }
+}
+
+.eyes:hover {
+  opacity: 1;
+}
+
+.eyesContainer {
+  height: 300px;
+  width: 300px;
+}

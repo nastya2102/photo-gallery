@@ -1,0 +1,27 @@
+{
+  "name": "photo-galery-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "dropzone": "^5.9.2",
+    "next": "11.1.0",
+    "next-redux-cookie-wrapper": "^2.0.1",
+    "next-redux-wrapper": "^7.0.4",
+    "react": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-dom": "17.0.2",
+    "react-dropzone": "^11.3.4",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "remixicon": "^2.5.0",
+    "sass": "^1.38.2"
+  }
+}
